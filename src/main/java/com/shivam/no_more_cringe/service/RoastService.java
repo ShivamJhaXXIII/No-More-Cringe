@@ -20,13 +20,13 @@ public class RoastService {
     /**
      * The OpenAI API key, injected from application properties.
      */
-    @Value("${openai.api-key}")
+    @Value("${groq.api-key}")
     private String apiKey;
 
     /**
      * The OpenAI API URL, injected from application properties.
      */
-    @Value("${openai.api-url}")
+    @Value("${groq.api-url}")
     private String apiUrl;
 
     /**
@@ -47,7 +47,7 @@ public class RoastService {
 
         // Prepare the request body for OpenAI API
         Map<String, Object> body = Map.of(
-                "model", "gpt-3.5-turbo",
+                "model", "llama3-8b-8192",
                 "messages", List.of(
                         Map.of("role", "system", "content", "You are resume critique expert who gives honest feedback."),
                         Map.of("role", "user", "content", prompt)
@@ -64,7 +64,7 @@ public class RoastService {
                 .bodyToMono(String.class)
                 .block();
 
-        System.out.println("Loaded api key " + apiKey);
+        
 
         // Extract roast, score, and suggestions from the response
         String roast = extractRoast(result);
