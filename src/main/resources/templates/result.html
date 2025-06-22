@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Your Roast Report</title>
+</head>
+<body>
+<h2>Your Resume Roast</h2>
+
+<div th:if="${error}">
+    <p style="color:red;" th:text="${error}"></p>
+</div>
+
+<div th:if="${roast}">
+    <p><strong>Cringe Score:</strong> <span th:text="${roast.cringeScore}"></span></p>
+    <p><strong>Roast:</strong></p>
+    <p th:text="${roast.roast}"></p>
+    <p><strong>Suggestions:</strong></p>
+    <ul>
+        <li th:each="suggestion : ${roast.suggestion}" th:text="${suggestion}"></li>
+    </ul>
+</div>
+
+<a href="/">Upload Another</a>
+</body>
+</html>
