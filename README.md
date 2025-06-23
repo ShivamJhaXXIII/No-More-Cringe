@@ -33,7 +33,7 @@ You have a few options to get "No More Cringe" up and running:
 
 ### Executable Jar
 
-1.  Go to [Releases](https://github.com/your-username/your-repo-name/releases)
+1.  Go to [Releases](https://github.com/ShivamJhaXXIII/No-More-Cringe/releases)
 2.  Download the latest `.jar` file.
 3.  Run it:
     ```bash
