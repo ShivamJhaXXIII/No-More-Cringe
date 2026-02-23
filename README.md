@@ -56,18 +56,6 @@ You have a few options to get "No More Cringe" up and running:
     mvn spring-boot:run
     ```
 
-### Using Docker
-
-1.  **Build the Docker image:**
-    ```bash
-    docker build -t no-more-cringe .
-    ```
-2.  **Run the Docker container:**
-    ```bash
-    docker run -p 8080:8080 -e GROQ_API_KEY=your_groq_api_key no-more-cringe
-    ```
-    (Remember to replace `your_groq_api_key` with your actual Groq API key.)
-
 -----
 
 ## 🔑 API Key Setup
@@ -98,9 +86,5 @@ This application uses the Groq API to access Llama models for the resume roastin
             $env:GROQ_API_KEY="your_groq_api_key_here"
             java -jar no-more-cringe-1.0.0.jar # or mvn spring-boot:run
             ```
-      * **For Docker:** As shown in the Docker run command above, you can pass it directly using the `-e` flag:
-        ```bash
-        docker run -p 8080:8080 -e GROQ_API_KEY=your_groq_api_key no-more-cringe
-        ```
 
 -----
